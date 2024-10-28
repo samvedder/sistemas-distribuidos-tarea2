@@ -1,0 +1,18 @@
+version: '3.8'
+
+networks:
+  app-network:
+    external: false
+
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: client
+    depends_on:
+      - producer
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network

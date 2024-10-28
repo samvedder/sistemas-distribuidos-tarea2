@@ -1,0 +1,19 @@
+version: '3.8'
+
+networks:
+  app-network:
+    external: false
+
+services:
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    container_name: admin
+    depends_on:
+      - kafka
+    restart: always
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network

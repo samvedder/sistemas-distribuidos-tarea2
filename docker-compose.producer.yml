@@ -1,0 +1,20 @@
+version: '3.8'
+
+networks:
+  app-network:
+    external: false
+
+services:
+  producer:
+    build:
+      context: ./producer
+      dockerfile: Dockerfile
+    container_name: producer
+    restart: always
+    ports:
+      - "50051:50051"
+    networks:
+      - app-network
+    depends_on:
+      - kafka
+      - admin

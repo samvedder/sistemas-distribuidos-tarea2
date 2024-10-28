@@ -1,0 +1,21 @@
+version: '3.8'
+
+networks:
+  app-network:
+    external: false
+
+services:
+  consumer_elastic:
+    build:
+      context: ./consumer_elastic
+      dockerfile: Dockerfile
+    container_name: consumer_elastic
+    restart: always
+    ports:
+      - "50053:50053"
+    networks:
+      - app-network
+    depends_on:
+      - kafka
+      - elasticsearch
+      - kibana
