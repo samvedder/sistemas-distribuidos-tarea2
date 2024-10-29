@@ -1,5 +1,6 @@
 
 # Sistema de Pedidos Distribuido con gRPC y Kafka
+## Introducción
 Este proyecto implementa un sistema distribuido para la gestión y procesamiento de pedidos en un entorno de e-commerce, utilizando microservicios y tecnologías como gRPC, Kafka, y SMTP para enviar notificaciones a los clientes por correo electrónico. El sistema está diseñado para simular el flujo de pedidos, desde su creación hasta su entrega final, interactuando con servicios de pago, transporte, y notificación.
 
 ## Descripción del Proyecto
@@ -81,3 +82,7 @@ En el archivo `client.py`, puedes personalizar los siguientes datos:
 - **Gateways de pago**: La lista `payment_gateways` contiene los métodos de pago disponibles.
 - **Bancos**: Los bancos para las transacciones se encuentran en `banks`.
 - **Direcciones de envío**: Puedes modificar las regiones y direcciones de envío en los arreglos `shipping_address_regions` y `shipping_addresses`.
+
+# Video 
+
+[Demostracion](https://drive.google.com/file/d/10IZ7VNOanqFr0O1bRyD9JJmuvxu4kqlX/view)
